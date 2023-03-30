@@ -31,6 +31,14 @@ class Student:
         return str("Person: " + self._person.display() + ", Major: " + self._major + ", Start Date: " + str(
             self._start_date) + ", GPA: " + str(self._gpa))
 
+    def __str__(self):
+        return (
+                    "Student Last Name: " + self._person._last_name + ", Student First Name: " + self._person._first_name + ", Major: " + self._major + ", GPA: " + str(
+                self._gpa))
+
+    def __repr__(self):
+        return ("Student(" + str(self._person.__repr__()) + ", \'" + self._major + "\', " + str(self._gpa))
+
 
 if __name__ == "__main__":
     # create person object
@@ -50,6 +58,8 @@ if __name__ == "__main__":
 
     # display the student after changes
     print(dmacc_student.display())
+    # print(dmacc_student)
+    # print(dmacc_student.__repr__())
 
     # garbage collection
     del (myself)

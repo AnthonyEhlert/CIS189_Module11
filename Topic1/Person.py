@@ -12,19 +12,31 @@ from Topic1.Address import Address
 
 class Person:
     """Person class using class Address, Class Composition"""
+
     def __init__(self, lname, fname, addy=''):
         name_characters = set("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'-")
         if not (name_characters.issuperset(lname) and name_characters.issuperset(fname)):
             raise ValueError
-        self.last_name = lname
-        self.first_name = fname
-        self.address = addy
+        self._last_name = lname
+        self._first_name = fname
+        self._address = addy
 
     def display(self):
-        if (self.address == ''):
-            return str(self.last_name) + ", " + str(self.first_name)
+        if (self._address == ''):
+            return str(self._last_name) + ", " + str(self._first_name)
         else:
-            return str(self.last_name) + ", " + str(self.first_name) + '\n'+ self.address.display()
+            return str(self._last_name) + ", " + str(self._first_name) + '\n' + self._address.display()
+
+    def __str__(self):
+        if (self._address == ''):
+            return "Last Name: " + self._last_name + ", First Name: " + self._first_name
+        else:
+            return (
+                        "Last Name: " + self._last_name + ", First Name: " + self._first_name + ", Address: " + self._address.display())
+
+    def __repr__(self):
+        repr_string = ("Person(\"" + self._last_name + "\", \"" + self._first_name + "\", " + self._address.__repr__() + ")")
+        return repr_string
 
 
 if __name__ == "__main__":
@@ -34,9 +46,11 @@ if __name__ == "__main__":
     print(person1.display())
 
     # apartemnt number is at the end. Why?
-    #addy2 = Address('123', 'Main', 'Street', 'Small Town', 'Iowa', '11111', '16B')
-    person2 = Person('Hammer', 'Martin')
+    addy2 = Address('123', 'Main', 'Street', 'Small Town', 'Iowa', '11111', '16B')
+    person2 = Person('Hammer', 'Martin', addy2)
     print(person2.display())
+    print(person2)
+    print(person2.__repr__())
 
-    del (addy1)
+    del (addy1, addy2)
     del (person1, person2)
