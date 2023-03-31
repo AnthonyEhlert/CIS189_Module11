@@ -22,12 +22,29 @@ class Student:
         self._gpa = gpa
 
     def change_major(self, value):
+        """
+        This method updates the major for the object
+
+        :param value: new major for object
+        :return: N/A
+        """
         self._major = value
 
     def update_gpa(self, value):
+        """
+        This method updates the gpa for the object
+
+        :param value: new gpa value
+        :return: N/A
+        """
         self._gpa = value
 
     def display(self):
+        """
+        This method returns a string value with the values of the object's variables
+
+        :return: Formatted string of values of object's variables
+        """
         return str("Person: " + self._person.display() + ", Major: " + self._major + ", Start Date: " + str(
             self._start_date) + ", GPA: " + str(self._gpa))
 

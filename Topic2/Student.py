@@ -23,9 +23,21 @@ class Student(Person):
         self._student_id = student_id
 
     def change_major(self, value):
+        """
+        This method updates the major for the object
+
+        :param value: new major for object
+        :return: N/A
+        """
         self._major = value
 
     def update_gpa(self, value):
+        """
+        This method updates the gpa for the object
+
+        :param value: new gpa value
+        :return: N/A
+        """
         self._gpa = value
 
     def display(self):

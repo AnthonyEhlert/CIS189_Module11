@@ -22,6 +22,11 @@ class Address:
         self._zip_code = zip
 
     def display(self):
+        """
+        This method returns a string value with the values of the object's variables
+
+        :return: Formatted string of values of object's variables
+        """
         return (self._street_number + ' ' + self._street_name + ' ' + self._street_type + ' ' + self._apartment_number
                 + '\n' + self._city + ', ' + self._state + ' ' + self._zip_code)
 

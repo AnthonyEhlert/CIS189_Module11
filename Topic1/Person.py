@@ -22,6 +22,11 @@ class Person:
         self._address = addy
 
     def display(self):
+        """
+        This method returns a string value with the values of the object's variables
+
+        :return: Formatted string of values of object's variables
+        """
         if (self._address == ''):
             return str(self._last_name) + ", " + str(self._first_name)
         else:
