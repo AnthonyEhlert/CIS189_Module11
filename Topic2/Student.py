@@ -49,11 +49,10 @@ class Student(Person):
         '''
         if (self._address == ''):
             return str(
-                self._last_name + ", " + self._first_name + ":(" + str(
-                    self._student_id) + ") " + self._major + " gpa: " + str(self._gpa))
+                super().display() + ":(" + str(self._student_id) + ") " + self._major + " gpa: " + str(self._gpa))
         else:
             return str(
-                self._last_name + ", " + self._first_name + ":(" + str(
+                super().display() + ":(" + str(
                     self._student_id) + ") " + self._major + " gpa: " + str(
                     self._gpa) + "address: " + self._address.display())
 
