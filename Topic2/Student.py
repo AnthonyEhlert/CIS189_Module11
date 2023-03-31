@@ -37,19 +37,23 @@ class Student(Person):
                 '''
         if (self._address == ''):
             return str(
-                "Student: " + self._last_name + ", " + self._first_name + ", Major: " + self._major + ", Student ID: " + str(
-                    self._student_id) + ", GPA: " + str(self._gpa))
+                self._last_name + ", " + self._first_name + ":(" + str(
+                    self._student_id) + ") " + self._major + " gpa: " + str(self._gpa))
         else:
             return str(
-                "Student: " + self._last_name + ", " + self._first_name + ", Address: " + self._address.display() + ", Major: " + self._major + ", Student ID: " + str(
-                    self._student_id) + ", GPA: " + str(self._gpa))
+                self._last_name + ", " + self._first_name + ":(" + str(
+                    self._student_id) + ") " + self._major + " gpa: " + str(
+                    self._gpa) + "address: " + self._address.display())
 
     def __str__(self):
-        return ("Student ID: " + str(self._student_id) + ", Last Name: " + self._last_name + ", First Name: " + self._first_name + ", Major: " + self._major + ", GPA: " + str(self._gpa))
-
+        return ("Student ID: " + str(
+            self._student_id) + ", Last Name: " + self._last_name + ", First Name: " + self._first_name + ", Major: " + self._major + ", GPA: " + str(
+            self._gpa))
 
     def __repr__(self):
-        return ("Student(" + str(self._student_id) + ", \'" + self._last_name + "\', \'" + self._first_name + "\', \'" + self._major + "\', " + str(self._gpa))
+        return ("Student(" + str(
+            self._student_id) + ", \'" + self._last_name + "\', \'" + self._first_name + "\', \'" + self._major + "\', " + str(
+            self._gpa) + ")")
 
 
 if __name__ == "__main__":
@@ -60,6 +64,6 @@ if __name__ == "__main__":
     print(my_student.display())
     my_student = Student(900111111, 'Song', 'River', 'Computer Engineering', 4.0)
     print(my_student.display())
-    # print(my_student)
-    # print(my_student.__repr__())
+    #print(my_student)
+    #print(my_student.__repr__())
     del my_student
