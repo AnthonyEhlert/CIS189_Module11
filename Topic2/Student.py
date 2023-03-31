@@ -1,7 +1,7 @@
 """
 Program: Student.py
 Author: Tony Ehlert
-Last date modified: 3/30/2023
+Last date modified: 3/31/2023
 
 The purpose of this program is define and create a Student class being derived from a Person class
 and its method along with student objects
