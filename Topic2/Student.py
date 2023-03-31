@@ -30,11 +30,11 @@ class Student(Person):
 
     def display(self):
         '''
-                This method returns a formatted string containing the employee object first_name, last_name,
-                address (if present), major, gpa, and student id
+        This method returns a formatted string containing the employee object first_name, last_name,
+        address (if present), major, gpa, and student id
 
-                :return: Formatted string containing student object information
-                '''
+        :return: Formatted string containing student object information
+        '''
         if (self._address == ''):
             return str(
                 self._last_name + ", " + self._first_name + ":(" + str(
