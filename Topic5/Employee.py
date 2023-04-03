@@ -14,11 +14,25 @@ from datetime import date
 class Employee():
     '''Employee Class'''
 
-    def __init__(self, start_date, slry):
+    def __init__(self, lname, fname, start_date, slry):
+        self._last_name = lname
+        self._first_name = fname
         self._start_date = start_date
         self._salary = float(slry)
 
     # getters and setters
+    def set_last_name(self, lname):
+        self._last_name = lname
+
+    def get_last_name(self):
+        return self._last_name
+
+    def set_first_name(self, fname):
+        self._first_name = fname
+
+    def get_first_name(self):
+        return self._first_name
+
     def set_start_date(self, start_date):
         self._start_date = start_date
 
@@ -52,20 +66,21 @@ class Employee():
         return display_string
 
     def __str__(self):
-        str_string = "Start Date: " + str(self._start_date)
+        str_string = "Last Name: " + self._last_name + ", First Name: " + self._first_name + ", Start Date: " + str(
+            self._start_date)
         str_string = str_string + (", Salary: " + str(f"{self._salary:.0f}"))
         return str_string
 
     def __repr__(self):
-        repr_string = "Employee(" + str(self._start_date)
+        repr_string = "Employee(\"" + self._last_name + "\", \"" + self._first_name + "\", " + str(self._start_date)
         repr_string = repr_string + ", " + str(self._salary) + ")"
         return repr_string
 
 # driver
 if __name__ == "__main__":
-    emp1 = Employee(datetime.date.today(), 25000)
-    emp2 = Employee(datetime.date.today(), 27500)
-    emp3 = Employee(datetime.date.today(), 30000)
+    emp1 = Employee("Rodgers", "Steve", datetime.date.today(), 25000)
+    emp2 = Employee("Stark", "Tony", datetime.date.today(), 27500)
+    emp3 = Employee("Banner", "Bruce", datetime.date.today(), 30000)
 
     print(emp1.display())
     print(emp1)

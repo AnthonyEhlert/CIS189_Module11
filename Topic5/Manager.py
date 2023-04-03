@@ -20,7 +20,7 @@ class Manager(Employee, Person):
     '''Manager class derived from Employee and Person classes'''
 
     def __init__(self, lname, fname, address, phone_num, start_date, slry, department, direct_reports=[]):
-        Employee.__init__(self, start_date=start_date, slry=slry)
+        Employee.__init__(self, lname= lname, fname= fname, start_date=start_date, slry=slry)
         Person.__init__(self, lname=lname, fname=fname, address=address, phone_num=phone_num)
         self._department = department
         self._direct_reports = direct_reports
@@ -102,9 +102,9 @@ if __name__ == "__main__":
     print(service_manager.display())
 
     # create at least three direct_reports that report to Manager
-    emp1 = Employee(datetime.date.today(), 25000)
-    emp2 = Employee(datetime.date.today(), 27500)
-    emp3 = Employee(datetime.date.today(), 30000)
+    emp1 = Employee("Rodgers", "Steve", datetime.date.today(), 25000)
+    emp2 = Employee("Stark", "Tony", datetime.date.today(), 27500)
+    emp3 = Employee("Banner", "Bruce", datetime.date.today(), 30000)
 
     emp_list = [emp1, emp2, emp3]
 
